@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With All My Heart, Baba 💙</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      header {
+        height: 100vh;
+        background: linear-gradient(135deg, #ffdab9, #ffe4e1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      header h1 {
+        font-size: 3rem;
+        color: #333;
+      }
+
+      header p {
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+        max-width: 600px;
+        color: #555;
+      }
+
+      .scroll-btn {
+        margin-top: 2rem;
+        padding: 1rem 2rem;
+        background-color: #ff8c8c;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .scroll-btn:hover {
+        background-color: #ff6b6b;
+      }
+
+      .gallery, .message {
+        padding: 4rem 2rem;
+        background-color: #fff5f5;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .message{
+        text-align: center;
+        display: block;
+      }
+
+      .memory {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .memory img {
+        width: 100%;
+        height: 600px; /* or any fixed height you prefer */
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .memory:hover img {
+        transform: scale(1.1);
+      }
+
+      .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 1rem;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .memory:hover .caption {
+        opacity: 1;
+      }
+
+      .quiz {
+        padding: 4rem 2rem;
+        background-color: #fff0f0;
+        text-align: center;
+      }
+
+      .quiz h2 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+      }
+
+      .question {
+        display: none;
+      }
+
+      .question.active {
+        display: block;
+      }
+
+      .question button {
+        margin: 0.5rem;
+        padding: 1rem 1.5rem;
+        border: none;
+        border-radius: 20px;
+        background-color: #ffb3b3;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .question button:hover {
+        background-color: #ff8585;
+      }
+
+      .heart {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: pink;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        animation: bounce 2s infinite;
+        transition: all 0.3s ease;
+      }
+
+      .heart.jiggle {
+        animation: jiggle 0.2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes jiggle {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(5deg);
+        }
+        75% {
+          transform: rotate(-5deg);
+        }
+      }
+
+      #heartMsg {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        background: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>To My Amazing Baba 💙</h1>
+        <p>
+          Dear Baba, this website is a small thank you for the love, sacrifices,
+          and strength you’ve always shown us. You inspire us every single day,
+          and I wanted to give you something special.
+        </p>
+        <button
+          class="scroll-btn"
+          onclick="document.querySelector('.gallery').scrollIntoView({behavior: 'smooth'})"
+        >
+          Start the Journey 💫
+        </button>
+      </div>
+    </header>
+
+    <section class="gallery">
+      <div class="memory">
+        <img src="SAM_0011.JPG" alt="Memory 1" />
+        <div class="caption">
+          This picture means the world to me because you were smiling.
+        </div>
+      </div>
+      <div class="memory">
+        <img src="2.JPG" alt="Memory 2" />
+        <div class="caption">
+          You’ve always been my role model, even in the smallest moments.
+        </div>
+      </div>
+      <div class="memory">
+        <img src="1.JPG" alt="Memory 3" />
+        <div class="caption">The calm you bring into my life is priceless.</div>
+      </div>
+      <div class="memory">
+        <img src="https://via.placeholder.com/300x200" alt="Memory 4" />
+        <div class="caption">Every time you laughed, I felt at home.</div>
+      </div>
+    </section>
+
+    <section class="quiz">
+      <h2>🎮 Baba Quiz Time</h2>
+      <div id="question1" class="question active">
+        <p>If we had to describe Dad in one sentence, what would it be?</p>
+        <button onclick="checkAnswer(this, 'correct', 'question1')">
+          a Father
+        </button>
+        <button onclick="checkAnswer(this, 'wrong', 'question1')">
+          Someone we know
+        </button>
+        <button onclick="checkAnswer(this, 'wrong', 'question1')">
+          Just a man
+        </button>
+        <button onclick="checkAnswer(this, 'wrong', 'question1')">
+          A Protector
+        </button>
+      </div>
+
+      <div id="question2" class="question">
+        <p>What series does Baba rewatch a hundred times?</p>
+        <button onclick="checkAnswer(this, 'wrong', 'question2')">
+          Breaking Bad
+        </button>
+        <button onclick="checkAnswer(this, 'wrong', 'question2')">
+          Friends
+        </button>
+        <button onclick="checkAnswer(this, 'correct', 'question2')">
+          Salahddin
+        </button>
+        <button onclick="checkAnswer(this, 'wrong', 'question2')">
+          Prison Break
+        </button>
+      </div>
+
+      <div id="question3" class="question">
+        <p>Who’s the best overachiever in the world?</p>
+        <button onclick="checkAnswer(this, 'correct', 'question3')">
+          Baba 💙
+        </button>
+        <button onclick="checkAnswer(this, 'wrong', 'question3')">
+          Einstein
+        </button>
+        <button onclick="checkAnswer(this, 'wrong', 'question3')">
+          Batman
+        </button>
+        <button onclick="checkAnswer(this, 'wrong', 'question3')">
+          Steve Jobs
+        </button>
+      </div>
+
+      <div
+        id="finalMessage"
+        style="display: none; margin-top: 2rem; font-size: 1.5rem"
+      >
+        🎉 You did it Baba! You’re officially the world’s coolest Baba! 💙
+      </div>
+    </section>
+    <section class="message">
+      <h1>Just a few of the moments I won’t forget</h1>
+      <br>
+      <p>
+        Thanks for being there— quiet, strong, or just around. I might not
+        say it often, but I notice more than you think.
+      </p>
+    </section>
+
+    <div id="heartMsg">Come on Baba, you know this one!</div>
+    <div class="heart" id="heart">❤️</div>
+
+    <script>
+      function checkAnswer(button, status, currentId) {
+        if (status === "wrong") {
+          const heart = document.getElementById("heart");
+          const msg = document.getElementById("heartMsg");
+          heart.classList.add("jiggle");
+          msg.style.display = "block";
+          setTimeout(() => {
+            heart.classList.remove("jiggle");
+            msg.style.display = "none";
+          }, 2000);
+          return;
+        }
+
+        document.getElementById(currentId).classList.remove("active");
+        if (currentId === "question1")
+          document.getElementById("question2").classList.add("active");
+        else if (currentId === "question2")
+          document.getElementById("question3").classList.add("active");
+        else if (currentId === "question3")
+          document.getElementById("finalMessage").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
